@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <title>Library | Book Management</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Library home">
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <span>Little Library</span>
+        </a>
+        <span class="topbar-label">BOOK MANAGEMENT</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">YOUR COLLECTION</p>
+        <h1>A good book is<br />always worth keeping.</h1>
+        <p class="intro-copy">Keep track of your library, one story at a time.</p>
+      </section>
+
+      <section class="content-grid" aria-label="Book management">
+        <form class="book-form panel" id="book-form">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">ADD TO THE SHELF</p>
+              <h2>New book</h2>
+            </div>
+            <span class="heading-icon" aria-hidden="true">+</span>
+          </div>
+
+          <label for="title">Book title</label>
+          <input id="title" name="title" type="text" placeholder="e.g. The Midnight Library" required maxlength="200" />
+
+          <label for="author">Author</label>
+          <input id="author" name="author" type="text" placeholder="e.g. Matt Haig" required maxlength="120" />
+
+          <label for="category">Category</label>
+          <input id="category" name="category" type="text" placeholder="e.g. Fiction" required maxlength="80" />
+
+          <button class="primary-button" type="submit">Add book <span aria-hidden="true">↗</span></button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="collection panel" aria-labelledby="collection-title">
+          <div class="collection-heading">
+            <div>
+              <p class="eyebrow">ALL THE STORIES</p>
+              <h2 id="collection-title">Your collection</h2>
+            </div>
+            <span class="book-count" id="book-count">0 books</span>
+          </div>
+
+          <p class="list-message" id="list-message" role="status" aria-live="polite">Loading your books…</p>
+          <div class="book-list" id="book-list"></div>
+          <nav class="pagination" id="pagination" aria-label="Book pages" hidden>
+            <button class="page-button" id="previous-page" type="button">← Previous</button>
+            <span id="page-label"></span>
+            <button class="page-button" id="next-page" type="button">Next →</button>
+          </nav>
+        </section>
+      </section>
+
+      <footer>Made for readers, wherever their next chapter begins.</footer>
+    </main>
+  </body>
+</html>
